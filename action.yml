@@ -1,6 +1,6 @@
 name: 'Laser Red Build Release Action'
 author: 'Laser Red'
-description: 'Build a WordPress plugin's assets using NPM and Composer, then attach them to the release'
+description: 'Build a WordPress plugins assets using NPM and Composer, then attach them to the release'
 inputs:
   generate-zip:
     description: 'Generate package zip file?'
