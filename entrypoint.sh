@@ -2,10 +2,13 @@
 
 # Set variables
 GENERATE_ZIP=false
-NODE_VERSION='v12.22.1'
+NODE_VERSION="v12.22.1"
 BUILD_PATH="./build"
 WORKING_DIRECTORY="$GITHUB_WORKSPACE"
 ZIP_DIRECTORY="build"
+
+echo "Are we building the ZIP? $1"
+echo "Requested Node $2"
 
 # Set options based on user input
 if [ -z "$1" ]; then
