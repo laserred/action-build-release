@@ -41,6 +41,7 @@ fi
 if [ -f "package.json" ]; then
     echo "Installing asset dependencies..."
     echo "Using Node $NODE_VERSION"
+    . /usr/local/nvm/nvm.sh
     nvm install $NODE_VERSION
     nvm use $NODE_VERSION
     npm install
