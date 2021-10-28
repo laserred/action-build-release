@@ -4,6 +4,7 @@ ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 14.16.0
 ENV TZ=GMT+0
 
+RUN mkdir $NVM_DIR
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 RUN apt-get update && apt-get install -y build-essential
 RUN apt-get install -y zip unzip curl php php-cli php-dev php-curl php-mbstring php-xmlrpc git rsync
