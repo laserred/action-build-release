@@ -15,7 +15,7 @@ if [ -z "$1" ]; then
     GENERATE_ZIP="$1"
 fi
 
-if [ -z "$2" ]; then
+if [ -n "$2" ]; then
     NODE_VERSION="$2"
 fi
 
