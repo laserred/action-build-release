@@ -1,6 +1,14 @@
 # Action - Build Release
 Build a WordPress plugin's assets using NPM and Composer, then attach them to the release
 
+## Managing files in the build
+
+Use a `.distignore` file to exclude files from the build.
+
+## Testing locally
+
+Install [act](https://github.com/nektos/act) and run a test from your repo directory.
+
 ## Example
 ```yaml
 name: Build release and save asset
@@ -19,6 +27,7 @@ jobs:
         uses: laserred/action-build-release@master
         with:
           generate-zip: true
+          node-version: 'v14.16.0'
       - name: Upload release asset
         uses: actions/upload-release-asset@v1
         env:
