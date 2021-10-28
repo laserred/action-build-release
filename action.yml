@@ -1,0 +1,21 @@
+name: 'Laser Red Build Release Action'
+author: 'Laser Red'
+description: 'Build a WordPress plugin's assets using NPM and Composer, then attach them to the release'
+inputs:
+  generate-zip:
+    description: 'Generate package zip file?'
+    default: false
+  node-version:
+    description: 'Node version?'
+    default: 'v14.16.0'
+outputs:
+  path:
+    description: 'Build path'
+  zip_path:
+    description: 'Zip file path'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.generate-zip }}
+    - ${{ inputs.node-version }}
