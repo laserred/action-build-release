@@ -34,7 +34,7 @@ cd "$WORKING_DIRECTORY" || exit
 # Install and build PHP dependencies
 if [ -f "composer.json" ]; then
     echo "Installing PHP dependencies..."
-    composer install --no-dev || exit "$?"
+    composer install --no-dev --ignore-platform-reqs || exit "$?"
 fi
 
 # Install and build assets
