@@ -34,7 +34,12 @@ cd "$WORKING_DIRECTORY" || exit
 # Install and build PHP dependencies
 if [ -f "composer.json" ]; then
     echo "Installing PHP dependencies..."
-    composer install --no-dev --ignore-platform-reqs --no-cache || exit "$?"
+    if [ -n "$RUNNER_DEBUG" ]; then
+        echo "Debug logging is enabled. Running Composer with -vvv."
+        composer install -vvv --no-dev --ignore-platform-reqs --no-cache || exit "$?"
+    else
+        composer install --no-dev --ignore-platform-reqs --no-cache || exit "$?"
+    fi
 fi
 
 # Install and build assets
